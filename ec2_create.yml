@@ -23,4 +23,12 @@
       s3_bucket:
         name: kichmaloojmichganoooj
         state: present
+       
+- name: Create EBS Volume
+  ec2_vol:
+    region: us-west-2
+    size: 10
+    volume_type: gp2
+    state: present
+  register: ebs_volume
         

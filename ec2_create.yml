@@ -1,0 +1,20 @@
+---
+- name: Create EC2 Instance
+  hosts: localhost
+  gather_facts: False
+
+  tasks:
+    - name: Create EC2 Instance
+      ec2_instance:
+        region: us-west-2
+        image: ami-0c94855ba95c71c99
+        instance_type: t2.micro
+        key_name: my-key-pair
+        security_groups: my-security-group
+        count: 1
+        wait: yes
+      register: ec2
+
+    - name: Display EC2 Instance Information
+      debug:
+        var: ec2.instances

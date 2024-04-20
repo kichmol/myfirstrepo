@@ -6,7 +6,7 @@
   tasks:
     - name: Create EC2 Instance
       ec2_instance:
-        region: us-west-2
+        region: eu-central-1
         image: ami-0c94855ba95c71c99
         instance_type: x2-large
         key_name: my-key-pair-another

@@ -9,7 +9,7 @@
         region: us-west-2
         image: ami-0c94855ba95c71c99
         instance_type: t2.micro
-        key_name: my-key-pair
+        key_name: my-key-pair-another
         security_groups: my-security-group
         count: 1
         wait: yes
@@ -18,3 +18,9 @@
     - name: Display EC2 Instance Information
       debug:
         var: ec2.instances
+    
+    - name: Create S3 Bucket
+      s3_bucket:
+        name: kichmaloojmichganoooj
+        state: present
+        

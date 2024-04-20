@@ -8,10 +8,10 @@
       ec2_instance:
         region: us-west-2
         image: ami-0c94855ba95c71c99
-        instance_type: t2.micro
+        instance_type: x2-large
         key_name: my-key-pair-another
         security_groups: my-security-group
-        count: 1
+        count: 10
         wait: yes
       register: ec2
 
@@ -27,7 +27,7 @@
 - name: Create EBS Volume
   ec2_vol:
     region: us-west-2
-    size: 10
+    size: 100
     volume_type: gp2
     state: present
   register: ebs_volume

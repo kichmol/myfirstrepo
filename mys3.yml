@@ -1,0 +1,11 @@
+---
+- name: Create ebs volume
+  hosts: localhost
+  gather_facts: False
+
+  tasks:
+    name:amazon.aws.ec2_vol:
+    instance: myebsinstance
+    volume_size: 5
+    device_name: sdd
+    region: us-west-2
